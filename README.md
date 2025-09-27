@@ -50,23 +50,66 @@ Files (CSV) used in the project (stored in `archive/`):
   
 ## Quick setup & run instructions
 
-1. **Prerequisites**  
-   - macOS / Linux / Windows  
-   - PostgreSQL 14 (or compatible) installed and running  
-   - Python 3.10+  
-   - Git and optionally the GitHub CLI (gh)  
-   - VS Code / PyCharm (или любой редактор кода)  
+### 1. Prerequisites
 
-2. **Create virtual environment and install dependencies**  
+* macOS / Linux / Windows
+* PostgreSQL 14+ installed and running
+* Python 3.10+
+* Git (optional: GitHub CLI `gh`)
+* VS Code / PyCharm (any code editor)
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate    # macOS / Linux
-   # Windows PowerShell:
-   .\venv\Scripts\Activate.ps1
-   pip install -r requirements.txt
+### 2. Clone the repository
 
-3. **Create PostgreSQL database**
+```bash
+git clone <repository_url>
+cd <repository_folder>
+```
+
+### 3. Create Python virtual environment and install dependencies
+
+```bash
+python -m venv venv          # create virtual environment
+# macOS / Linux:
+source venv/bin/activate     
+# Windows PowerShell:
+.\venv\Scripts\Activate.ps1  
+pip install -r requirements.txt
+```
+
+### 4. Create PostgreSQL database
+
+```sql
+-- open psql shell
+CREATE DATABASE fashion_store;
+\c fashion_store
+```
+
+### 5. Import database schema
+
+```bash
+psql -U <username> -d fashion_store -f schema.sql
+```
+
+### 6. Load CSV data into tables
+
+```bash
+psql -U <username> -d fashion_store -f data.sql
+```
+
+> ⚠ Make sure the CSV files are in `archive/` folder and paths in `data.sql` match your local folder structure.
+
+### 7. Run Python script to execute queries
+
+```bash
+python main.py
+```
+
+> The script will connect to your PostgreSQL database, execute the queries from `queries.sql`, and display the results using `pandas`.
+
+### 8. Optional tools
+
+* Use **VS Code / PyCharm** to explore and edit the project.
+* Optionally, connect **Apache Superset** or other BI tools to visualize the data.
 
 
 
