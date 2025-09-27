@@ -22,6 +22,18 @@ campaigns: marketing campaigns and promotions
 
 channels: available sales channels
 
+## Dataset  
+
+Files (CSV) used in the project (stored in `archive/`):  
+
+- **dataset_fashion_store_campaigns.csv** — marketing campaigns (discounts, start/end dates)  
+- **dataset_fashion_store_channels.csv** — sales channels (online, offline, etc.)  
+- **dataset_fashion_store_customers.csv** — customer demographics and registration  
+- **dataset_fashion_store_products.csv** — product catalog (categories, brands, prices)  
+- **dataset_fashion_store_sales.csv** — sales transactions (who, when, where)  
+- **dataset_fashion_store_salesitems.csv** — items per sale (products, quantities, prices)  
+- **dataset_fashion_store_stock.csv** — current stock levels by product and store  
+
 
 ## Contents of the repository
 
