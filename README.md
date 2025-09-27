@@ -9,9 +9,15 @@ The goal is to perform a comprehensive analysis of fashion retail data to identi
 The dataset is composed of 7 relational tables, clean, consistent and interconnected. Below is a description of each one:
 
 customers: 1.000 rows, 4 columns
+
 sales: 905 rows, 7 columns
+
 sales_items: 2.253 rows, 13 columns
+
 products: 500 rows, 9 columns
+
 stock: 1.000 rows, 3 columns
+
 campaigns: 7 rows, 7 columns
+
 channels: 2 rows, 2 columns
