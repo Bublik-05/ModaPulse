@@ -21,3 +21,26 @@ stock: 1.000 rows, 3 columns
 campaigns: 7 rows, 7 columns
 
 channels: 2 rows, 2 columns
+
+
+# Contents of the repository
+
+# Quick setup & run instructions
+
+## 1. Prerequisites
+
+## 2. Create virtual environment and install dependencies
+
+## 3. Create PostgreSQL database
+
+## 4. Create tables
+
+## 5. Import CSV data
+
+## 6. Run analytical queries
+
+## 7. Run Python script
+
+# Tools & resources
+
+# Project author: Pernebek Abylay
