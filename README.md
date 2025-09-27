@@ -4,7 +4,8 @@ Modapulsa Analytics is the analytics department of a large fashion retail chain.
 The goal is to perform a comprehensive analysis of fashion retail data to identify patterns and trends in product sales, customer segments, and regional performance.
 
 ## ERD Diagram
-<img width="580" height="677" alt="image" src="https://github.com/user-attachments/assets/a39e768a-5d5f-4705-b154-6be5d87270ed" />
+![Uploading image.png…]()
+
 
 
 ## Data Structure
