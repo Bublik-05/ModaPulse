@@ -6,7 +6,7 @@ The goal is to perform a comprehensive analysis of fashion retail data to identi
 # ERD Diagram
 
 # Data Structure
-The dataset is composed of 7 relational tables, clean, consistent and interconnected. Below is a description of each one:
+The dataset is composed of 7 relational tables, clean, consistent and interconnected. Below is a description of each one:<a href='https://www.kaggle.com/datasets/joycemara/european-fashion-store-multitable-dataset'></a>
 
 customers: 1.000 rows, 4 columns
 
@@ -22,6 +22,7 @@ campaigns: 7 rows, 7 columns
 
 channels: 2 rows, 2 columns
 
+https://www.kaggle.com/datasets/joycemara/european-fashion-store-multitable-dataset
 
 # Contents of the repository
 
