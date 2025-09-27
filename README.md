@@ -60,8 +60,8 @@ Files (CSV) used in the project (stored in `archive/`):
 ### 2. Clone the repository
 
 ```bash
-git clone <repository_url>
-cd <repository_folder>
+git clone git@github.com:Bublik-05/ModaPulse.git
+cd ModaPulse
 ```
 
 ### 3. Create Python virtual environment and install dependencies
