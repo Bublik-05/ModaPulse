@@ -120,8 +120,6 @@ python main.py
 
 * psycopg2-binary, pandas, sqlalchemy
 
-* Apache Superset (optional dashboard)
-
 * VS Code for editing
 
 
