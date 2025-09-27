@@ -1,4 +1,4 @@
 # ModaPulse
-Company: ModaPulse Analytics is a data-driven analytics service that helps a European online fashion retailer increase sales and reduce profitability.
+Modapulsa Analytics is the analytics department of a large fashion retail chain. We study sales, product assortment, and customer behavior to improve product assortment, forecast demand, and optimize store operations.
 
-ModaPulse Analytics collects and analyzes online clothing store data: customers, orders, products, categories, payments, and returns. The goal is to understand customer behavior, identify the most profitable and problematic products, and improve product selection and logistics.
+The goal is to perform a comprehensive analysis of fashion retail data to identify patterns and trends in product sales, customer segments, and regional performance.
