@@ -4,7 +4,7 @@ Modapulsa Analytics is the analytics department of a large fashion retail chain.
 The goal is to perform a comprehensive analysis of fashion retail data to identify patterns and trends in product sales, customer segments, and regional performance.
 
 ## ERD Diagram
-![Uploading image.png…]()
+<img width="637" height="942" alt="Снимок экрана (163)" src="https://github.com/user-attachments/assets/6c57e77e-cd17-4ed0-a1b5-8f49008b57a1" />
 
 
 
@@ -45,7 +45,6 @@ Files (CSV) used in the project (stored in `archive/`):
 - `main.py` — Python script to connect to the DB and run sample queries  
 - `requirements.txt` — Python dependencies  
 - `archive/` — CSV files (not included in repo if large)  
-- `images/` — ER diagram  
 - `data.sql` — importing CSV files
   
 ## Quick setup & run instructions
