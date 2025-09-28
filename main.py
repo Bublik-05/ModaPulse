@@ -6,7 +6,7 @@ DB_HOST = "localhost"
 DB_PORT = "5432"
 DB_NAME = "fashion_store"
 DB_USER = "postgres"
-DB_PASSWORD = "ap112005"
+DB_PASSWORD = ""
 
 # --- подключение к БД ---
 conn = psycopg2.connect(
