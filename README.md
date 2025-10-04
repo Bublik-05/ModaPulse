@@ -111,6 +111,72 @@ python main.py
 * Optionally, connect **Apache Superset** or other BI tools to visualize the data.
 
 
+---
+
+## Analytical Module (Assignment 2)
+
+After the database setup and data import (Assignment 1), this stage focuses on **data analysis, visualization, and exporting analytical reports**.
+
+### Goals of the Analysis
+
+In this stage, we explore the following key business questions:
+
+- Which **categories and brands** generate the most revenue?  
+- How do **sales vary by region and sales channel** (online/offline)?  
+- What is the **impact of marketing campaigns** on sales volume?  
+- Who are the **main customer segments** (by gender, age, purchase frequency)?  
+- How does **demand change over time**?
+
+---
+
+### ⚙️ How to Run the Analysis
+
+Make sure your PostgreSQL database is active and filled with data from the first assignment.  
+Then, run the script:
+
+```bash
+python analytics.py
+```
+### Results and Output Structure
+
+After running analytics.py, new results will appear inside these folders:
+
+#### 1. charts/
+
+Stores visualization images generated using matplotlib or seaborn:
+
+* top_categories.png — revenue by category
+
+* sales_trend.png — sales trend over time
+
+* campaign_effect.png — comparison of sales during campaigns
+
+#### 2. exports/
+
+Contains formatted Excel reports, e.g.:
+```bash
+exports/
+└── fashion_report.xlsx
+```
+
+Each Excel sheet corresponds to a different analysis topic, such as:
+
+* Top Categories
+
+* Sales by Channel
+
+* Customers Overview
+
+The report includes:
+
+* Frozen headers (freeze_panes)
+
+* Filters on all columns
+
+* Conditional color formatting (min/max values)
+
+* Gradient fills for numerical columns
+
 
 ## Tools & resources
 
