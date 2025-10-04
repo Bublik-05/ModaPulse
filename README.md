@@ -43,8 +43,8 @@ Files (CSV) used in the project (stored in `archive/`):
 - `schema.sql` — CREATE TABLE statements for all tables  
 - `data.sql` — SQL script for importing CSV data into PostgreSQL  
 - `queries.sql` — 10 analytical SQL queries (with short comments)  
-- `main.py` — Python script to connect to the database and execute basic queries (Assignment 1)  
-- `analytics.py` — main analytical module with SQL execution, data visualization, and export to Excel (Assignment 2)  
+- `main.py` — Python script to connect to the database and execute basic queries  
+- `analytics.py` — main analytical module with SQL execution, data visualization, and export to Excel 
 - `config.py` — database connection configuration (user, password, host, port, dbname)  
 - `requirements.txt` — Python dependencies (`pandas`, `matplotlib`, `openpyxl`, `psycopg2`, etc.)  
 - `archive/` — CSV files from the Kaggle dataset (may be stored as ZIP archive)  
