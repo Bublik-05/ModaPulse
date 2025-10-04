@@ -7,6 +7,7 @@ from openpyxl import load_workbook
 from openpyxl.formatting.rule import ColorScaleRule
 from pathlib import Path
 from datetime import datetime
+from openpyxl.styles import Font, Alignment
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
 export_path = f"exports/report_{timestamp}.xlsx"
 
@@ -89,11 +90,27 @@ for idx, query in enumerate(queries, start=1):
 
         # === 6. Product profitability (Scatter) ===
         elif idx == 6:
-            plt.bar(df['product_name'], df['profit_margin'], color='orange')
-            plt.title("Самые прибыльные товары")
-            plt.xlabel("Товар")
-            plt.ylabel("Прибыль (catalog - cost)")
-            plt.xticks(rotation=45, ha='right')
+            plt.figure(figsize=(10,6))
+
+            plt.scatter(df['cost_price'], df['catalog_price'], s=50, alpha=0.7, color='orange')
+
+            # Добавляем подписи товаров
+            for i, row in df.iterrows():
+                plt.text(row['cost_price'], row['catalog_price'], row['product_name'], fontsize=8, alpha=0.7)
+
+            plt.title(f"Прибыльность продуктов")
+            plt.xlabel("Себестоимость")
+            plt.ylabel("Цена каталога")
+            plt.grid(True)
+            plt.tight_layout()
+            plt.show()
+
+
+            chart_path = f"charts/query_{idx}.png"
+            plt.savefig(chart_path)
+            plt.close()
+            print(f"✅ Scatter-график сохранён: {chart_path}")
+
 
         elif idx == 7:
             fig = px.bar(
@@ -129,15 +146,24 @@ def export_to_excel(dataframes_dict, filename):
             for col in df.select_dtypes(include=['datetimetz']).columns:
                 df[col] = df[col].dt.tz_localize(None)
 
-            df.to_excel(writer, sheet_name=sheet_name, index=False)
+            # Добавляем индекс в датафрейм
+            df_reset = df.reset_index(drop=True)
+            df_reset.index += 1  # начинаем с 1
+            df_reset.to_excel(writer, sheet_name=sheet_name, index=True)
+
     wb = load_workbook(filename)
 
     for sheet_name in wb.sheetnames:
         ws = wb[sheet_name]
         ws.freeze_panes = "B2"  # закрепляем заголовки
-        ws.auto_filter.ref = ws.dimensions  # фильтры
+        ws.auto_filter.ref = ws.dimensions  # включаем фильтры
 
-        # Применяем условное форматирование для числовых столбцов
+        # Жирные заголовки и выравнивание
+        for cell in ws[1]:
+            cell.font = Font(bold=True)
+            cell.alignment = Alignment(horizontal='center', vertical='center')
+
+        # Градиентное форматирование числовых колонок
         for col in ws.iter_cols(min_row=2):
             values = [cell.value for cell in col if isinstance(cell.value, (int, float))]
             if not values:
@@ -151,6 +177,11 @@ def export_to_excel(dataframes_dict, filename):
             )
             ws.conditional_formatting.add(f"{col_letter}2:{col_letter}{max_row}", rule)
 
+        # Авто-подгонка ширины колонок
+        for col in ws.columns:
+            max_length = max(len(str(cell.value)) if cell.value else 0 for cell in col)
+            ws.column_dimensions[col[0].column_letter].width = max_length + 2
+
     wb.save(filename)
 
     total_sheets = len(wb.sheetnames)
@@ -158,7 +189,6 @@ def export_to_excel(dataframes_dict, filename):
     print(f"✅ Создан файл {filename}, {total_sheets} листов, {total_rows} строк.")
 
 
-
-
+export_to_excel(query_results, export_path)
 conn.close()
 print("\n✅ Все запросы успешно выполнены и графики сохранены в папку /charts.")

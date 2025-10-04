@@ -45,16 +45,18 @@ FROM sales s
 GROUP BY s.channel
 ORDER BY revenue DESC;
 
--- 6. Product profitability (catalog price - cost price)
-SELECT 
-    p.category,
-    ROUND(AVG(p.catalog_price - p.cost_price), 2) AS avg_profit_margin
-FROM products p
-GROUP BY p.category
-ORDER BY avg_profit_margin DESC
-LIMIT 10;
+-- 6. Product profitability с цветом по gender
+SELECT
+    product_name,
+    catalog_price,
+    cost_price,
+    (catalog_price - cost_price) AS profit_margin
+FROM products
+ORDER BY profit_margin DESC
+LIMIT 20;
 
--- 7. Изменение продаж по категориям со временем
+
+-- 7. Изменение продаж по категориям со временем 
 SELECT
     p.category,
     DATE_TRUNC('month', si.sale_date) AS month,
