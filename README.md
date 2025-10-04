@@ -135,7 +135,7 @@ In this stage, we explore the following key business questions:
 
 ---
 
-### ⚙️ How to Run the Analysis
+### How to Run the Analysis
 
 Make sure your PostgreSQL database is active and filled with data from the first assignment.  
 Then, run the script:
