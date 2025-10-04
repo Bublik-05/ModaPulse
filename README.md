@@ -41,11 +41,16 @@ Files (CSV) used in the project (stored in `archive/`):
 ## Contents of the repository
 
 - `schema.sql` — CREATE TABLE statements for all tables  
+- `data.sql` — SQL script for importing CSV data into PostgreSQL  
 - `queries.sql` — 10 analytical SQL queries (with short comments)  
-- `main.py` — Python script to connect to the DB and run sample queries  
-- `requirements.txt` — Python dependencies  
-- `archive/` — CSV files (not included in repo if large)  
-- `data.sql` — importing CSV files
+- `main.py` — Python script to connect to the database and execute basic queries (Assignment 1)  
+- `analytics.py` — main analytical module with SQL execution, data visualization, and export to Excel (Assignment 2)  
+- `config.py` — database connection configuration (user, password, host, port, dbname)  
+- `requirements.txt` — Python dependencies (`pandas`, `matplotlib`, `openpyxl`, `psycopg2`, etc.)  
+- `archive/` — CSV files from the Kaggle dataset (may be stored as ZIP archive)  
+- `charts/` — generated graphs and plots (e.g., revenue trends, top categories)  
+- `exports/` — Excel reports with formatting and filters  
+- `README.md` — project documentation with setup and analysis instructions  
   
 ## Quick setup & run instructions
 
@@ -61,7 +66,8 @@ Files (CSV) used in the project (stored in `archive/`):
 
 ```bash
 git clone git@github.com:Bublik-05/ModaPulse.git
-cd ModaPulse
+cd ModaPuls
+pip install -r requirements.txt
 ```
 
 ### 3. Create Python virtual environment and install dependencies
